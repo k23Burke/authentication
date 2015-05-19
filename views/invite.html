@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block tabtitle %}Invite Friends to No Excuses{% endblock %}
+
+{% block content %}
+<!-- random text -->
+	<h1>Invite Page</h1>
+	<form method="POST" action="/home/invite">
+	  <div class="form-group">
+	    <label for="exampleInputEmail1">Invitee Emails</label>
+	    <input type="text" id="emailforInvite" class="form-control" name="emailforInvite" placeholder="Email Address">
+	  </div>
+	  <button type="submit" class="btn btn-default">Invite</button>
+	</form>
+
+{% endblock %}

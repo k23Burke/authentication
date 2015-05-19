@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block tabtitle %}Signup for No Excuses{% endblock %}
+
+{% block content %}
+<!-- random text -->
+	<h1>Sign Up Page</h1>
+
+	<form method="POST" action="/signup">
+		<input type="hidden" name="teamId" value="{{ teamId }}">
+	  <div class="form-group">
+	    <label for="exampleInputEmail1">Email </label>
+	    <input type="text" class="form-control" name="email" id="exampleInputEmail1" placeholder="Email Address">
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputPassword1">Passowrd</label>
+	    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+	  </div>
+	  <button type="submit" class="btn btn-default">Sign Up</button>
+	</form>
+
+{% endblock %}
