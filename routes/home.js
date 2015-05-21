@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
 		console.log('USER', user);
 		console.log('PLAYER _ID', pId);
 		models.Player.findOne({_id: pId}, function(err, player) {
-			res.render('profile', {player: player})
+			res.render('profile', {player: player, loggedin: true})
 		})
 	})
 })
@@ -41,7 +41,7 @@ router.get('/team/create', function(req, res, next) {
 		if(err) return next(err)
 		models.Team.find({players : { $in : [pId]}}, function(err, teams) {
 			console.log(teams);
-			res.render('teaminfo', {team : teams[0]})
+			res.render('teaminfo', {team : teams[0], loggedin: true})
 		})
 	})
 })
@@ -56,7 +56,7 @@ router.post('/team/save', function(req, res, next) {
 			theTeam.populate('player', function(err, popTeam) {
 				if(err) return next(err)
 				console.log('TheTeam', popTeam);
-				res.render('teamhome', {team : popTeam})
+				res.render('teamhome', {team : popTeam, loggedin: true})
 			})
 		})
 	})
@@ -71,7 +71,7 @@ router.get('/team', function(req, res, next) {
 		models.Team.find({players : { $in : [pId]}}).populate('players').exec(function(err, teams) {
 			if(err) return next(err)
 			console.log(teams);
-			res.render('teamhome', {team : teams[0]})
+			res.render('teamhome', {team : teams[0], loggedin: true})
 		})
 	})
 })
@@ -105,6 +105,10 @@ router.post('/invite', function(req, res, next) {
 		})
 		res.render('invite')
 	})
+})
+
+router.get('/event', function(req, res, next) {
+	res.render('event')
 })
 
  module.exports = router;

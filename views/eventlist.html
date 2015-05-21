@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block tabtitle %}{{ title }}{% endblock %}
+
+{% block content %}
+<!-- random text -->
+	<h1>{{ team.name }}</h1>
+	<h3> Home of the {{ team.mascot }}<br/> <br/>
+
+	{% if team.players.length > 0 %}
+	<h5>Player list</h5>
+		<ul>
+		{% for player in team.players %}
+			<li>{{ player.firstName }} {{ player.lastName }} - <b>{{ player.position }}</b> - {{ player.title }}</li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+
+{% endblock %}
