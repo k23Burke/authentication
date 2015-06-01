@@ -26,6 +26,7 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 app.use(session({ secret: 'keepitahunnid' }));
 app.use(passport.initialize());
 app.use(passport.session());

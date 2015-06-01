@@ -64,7 +64,8 @@ var Schema = mongoose.Schema;
 //EVENT
 	var eventSchema = new Schema({
 		title: String,
-		date: {type: Date, default: Date.now },
+		startdate: {type: Date, default: Date.now },
+		enddate: {type: Date, default: Date.now },
 		location: String,
 		notes: String
 	})

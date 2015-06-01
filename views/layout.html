@@ -11,17 +11,18 @@
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="http://localhost:3337/stylesheets/normalize.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:3337/bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://localhost:3337/stylesheets/bootstrap-tokenfield.css">
         <link rel="stylesheet" href="http://localhost:3337/stylesheets/tokenfield-typeahead.css">
         <link rel="stylesheet" href="http://localhost:3337/stylesheets/style.css">
         <script src="http://localhost:3337/javascripts/modernizr.js"></script>
+        <script src="http://localhost:3337/bower_components/angular/angular.js"></script>
     </head>
-    <body>
+    <body ng-app="NoExcuse">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav class="navbar navbar-default navbar-fixed-top" ng-controller="Navigation">
             <div class="container">
                 <ul class="nav navbar-nav">
                     <li class=""><a href="/">HOME</a></li>
@@ -57,7 +58,7 @@
             
         </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://localhost:3337/bower_components/jquery/dist/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
         <script src="http://localhost:3337/javascripts/bootstrap-tokenfield.js"></script>
         <!-- <script src="javascripts/plugins.js"></script> -->

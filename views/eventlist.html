@@ -4,14 +4,12 @@
 
 {% block content %}
 <!-- random text -->
-	<h1>{{ team.name }}</h1>
-	<h3> Home of the {{ team.mascot }}<br/> <br/>
-
-	{% if team.players.length > 0 %}
-	<h5>Player list</h5>
+	<h1>Event List</h1><br/> <br/>
+	<a href="/home/event/new">Create New Event</a>
+	{% if event.length > 0 %}
 		<ul>
-		{% for player in team.players %}
-			<li>{{ player.firstName }} {{ player.lastName }} - <b>{{ player.position }}</b> - {{ player.title }}</li>
+		{% for event in events %}
+			<li>{{ event.name }}</li>
 		{% endfor %}
 		</ul>
 	{% endif %}

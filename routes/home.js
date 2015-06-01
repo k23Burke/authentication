@@ -108,10 +108,33 @@ router.post('/invite', function(req, res, next) {
 })
 
 router.get('/event', function(req, res, next) {
-	res.render('event')
+	res.render('eventlist')
+})
+
+router.get('/event/new', function(req, res, next) {
+	res.render('eventinfo')
+})
+router.post('/event/create', function(req, res, next) {
+	console.log(req.body);
+	var newEvent = new models.Event();
+	newEvent.title = req.body.title;
+	determineTimes(req.body);
 })
 
  module.exports = router;
+
+function determineTimes(data) {
+	var starthour = parseInt(data.hourStart);
+	data.startHalf === 'PM' ? hour += 12 : console.log('In AM')
+	var startmin = parseInt(data.minuteStart);
+
+	var startDate = new Date();
+	startDate.setMonth(data.month);
+	startDate.setDate(data.day);
+	startDate.setHours(starthour);
+	startDate.setMinutes(startmin);
+	console.log(startDate)
+}
 
 function getPlayerId(userId, cb) {
 	models.User.findOne({_id: userId}).populate('player').exec(function(err, user) {

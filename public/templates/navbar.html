@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default navbar-fixed-top" ng-controller="Navigation">
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li class=""><a ui-sref-active="active" ui-sref="home">Home</a></li>
+            <li class=""><a ui-sref-active="active" ui-sref="login">Login</a></li>
+            {{ blah }}
+            <!--<li class=""><a href="/">HOME</a></li>
+            <li class=""><a href="/teams">TEAMS <span class="sr-only">(current)</span></a></li>
+            <li class=""><a href="/login">LOGIN</a></li>
+            <li class=""><a href="/signup">SIGNUP</a></li>-->
+            {% if loggedin %}
+                <li><a href="/home/team">Team</a></li>
+                <li><a href="/home/invite">Invite To Team</a></li>
+                <li><a href="/home/event">Event</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
